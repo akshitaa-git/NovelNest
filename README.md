@@ -1,6 +1,6 @@
-# BookNest 📚
+# NovelNest 📚
 
-BookNest is a production-ready, full-stack reading companion platform built with the MERN stack. It leverages the Google Books API to provide access to millions of titles while offering a personalized experience through AI-driven insights and detailed reading analytics.
+NovelNest is a production-ready, full-stack reading companion platform built with the MERN stack. It leverages the Google Books API to provide access to millions of titles while offering a personalized experience through AI-driven insights and detailed reading analytics.
 
 ## ✨ Features
 
