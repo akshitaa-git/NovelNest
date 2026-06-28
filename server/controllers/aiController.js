@@ -27,7 +27,7 @@ exports.getBookSummary = async (req, res) => {
 exports.getAIRecommendations = async (req, res) => {
     try {
         const { query } = req.body;
-        const userId = req.user.id;
+        const userId = req.user;
 
         // Fetch user's shelf to personalize
         const userShelf = await BookShelf.find({ userId, status: 'read' }).limit(5);
@@ -61,7 +61,7 @@ exports.getAIRecommendations = async (req, res) => {
 exports.chatWithLibrarian = async (req, res) => {
     try {
         const { message, chatHistory } = req.body;
-        const userId = req.user.id;
+        const userId = req.user;
 
         // Fetch user context
         const userShelf = await BookShelf.find({ userId }).limit(10);

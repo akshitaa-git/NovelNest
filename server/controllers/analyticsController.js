@@ -3,8 +3,7 @@ const Review = require('../models/Review');
 
 exports.getReadingAnalytics = async (req, res) => {
     try {
-        const { userId } = req;
-
+        const userId = req.user;
         const totalRead = await BookShelf.countDocuments({ userId, status: 'read' });
         const totalWantToRead = await BookShelf.countDocuments({ userId, status: 'want-to-read' });
 

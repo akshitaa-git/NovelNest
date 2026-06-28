@@ -38,7 +38,7 @@ const mapBook = (item) => {
 
 exports.getPersonalizedRecommendations = async (req, res) => {
     try {
-        const userId = req.user.id;
+        const userId = req.user;
         // 1. Get user's read books
         const readBooks = await BookShelf.find({ userId, status: 'read' }).limit(3).sort({ updatedAt: -1 });
 

@@ -3,7 +3,7 @@ const BookShelf = require('../models/BookShelf');
 
 exports.addReview = async (req, res) => {
     try {
-        const { userId } = req;
+        const userId = req.user;
         const { bookId, rating, content } = req.body;
 
         const review = new Review({
@@ -39,7 +39,7 @@ exports.getBookReviews = async (req, res) => {
 
 exports.deleteReview = async (req, res) => {
     try {
-        const { userId } = req;
+        const userId = req.user;
         const { reviewId } = req.params;
 
         const review = await Review.findOneAndDelete({ _id: reviewId, userId });
